@@ -3,8 +3,6 @@ package lipgloss
 import (
 	"image/color"
 	"strings"
-
-	"github.com/charmbracelet/x/ansi"
 )
 
 // GetBold returns the style's bold value. If no value is set false is returned.
@@ -607,7 +605,7 @@ func getLines(s string) (lines []string, widest int) {
 	lines = strings.Split(s, "\n")
 
 	for _, l := range lines {
-		w := ansi.StringWidth(l)
+		w := tuiWidth(l)
 		if widest < w {
 			widest = w
 		}
