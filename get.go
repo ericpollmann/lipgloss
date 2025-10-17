@@ -607,7 +607,7 @@ func getLines(s string) (lines []string, widest int) {
 	lines = strings.Split(s, "\n")
 
 	for _, l := range lines {
-		w := ansi.StringWidth(l)
+		w := tuiWidth(l)
 		if widest < w {
 			widest = w
 		}
